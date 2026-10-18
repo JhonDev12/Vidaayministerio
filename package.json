@@ -1,0 +1,80 @@
+{
+  "name": "programa-vym",
+  "version": "2.0.0",
+  "description": "Programa de la reunión de entre semana: arma, actualiza y descarga en PDF o Word.",
+  "main": "electron/main.js",
+  "scripts": {
+    "build:web": "node build.mjs",
+    "dev": "node build.mjs --watch",
+    "electron": "npm run build:web && electron .",
+    "dist:win": "npm run build:web && electron-builder --win --x64",
+    "cap:sync": "npm run build:web && cap sync",
+    "seed": "python3 tools/make_seed.py"
+  },
+  "keywords": [],
+  "author": "Programa VyM",
+  "license": "ISC",
+  "dependencies": {
+    "@capacitor/core": "^6.2.2",
+    "@capacitor/filesystem": "^6.0.4",
+    "@capacitor/share": "^6.0.4",
+    "buffer": "^6.0.3",
+    "docx": "^9.0.3",
+    "jspdf": "^2.5.2"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^6.2.2",
+    "@capacitor/cli": "^6.2.2",
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8",
+    "esbuild": "^0.28.2"
+  },
+  "productName": "Programa VyM",
+  "private": true,
+  "build": {
+    "appId": "org.lafloresta.programavym",
+    "productName": "Programa VyM",
+    "copyright": "Programa VyM",
+    "directories": {
+      "output": "dist",
+      "buildResources": "assets"
+    },
+    "files": [
+      "electron/**",
+      "www/**",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.ico",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Programa VyM",
+      "installerLanguages": [
+        "es_ES"
+      ],
+      "language": "3082",
+      "artifactName": "Instalador-Programa-VyM-${version}.${ext}",
+      "deleteAppDataOnUninstall": false
+    },
+    "publish": null
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/usuario/programa-vym.git"
+  }
+}

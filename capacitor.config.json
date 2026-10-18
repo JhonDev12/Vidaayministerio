@@ -1,0 +1,6 @@
+{
+  "appId": "org.lafloresta.programavym",
+  "appName": "Programa VyM",
+  "webDir": "www",
+  "plugins": { "CapacitorHttp": { "enabled": true } }
+}

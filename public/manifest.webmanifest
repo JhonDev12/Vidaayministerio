@@ -1,0 +1,17 @@
+{
+  "name": "Programa VyM — Reunión de entre semana",
+  "short_name": "Programa VyM",
+  "description": "Arma el programa de la reunión de entre semana y descárgalo en PDF o Word.",
+  "lang": "es",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4f6fa",
+  "theme_color": "#1c4faa",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
